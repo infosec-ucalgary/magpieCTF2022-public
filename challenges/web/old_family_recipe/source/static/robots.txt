@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: 
+# Dear Pop,
+# It was awfully nice of those kinda fellas at Omni to help us out with our website, they told me
+# to give them some sorta secret key for the cookies, sounds like they could use a good ol' family recipe.
+# Would you be able to pass this secret key onto them?
+
+# flour_sugar_chocolate_and_lotsalove
+
+# Love,
+# Mom
+
+# P.S. I think they may be lost in the giggle juice, talking about their flasks...

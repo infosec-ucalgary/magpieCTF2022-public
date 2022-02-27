@@ -1,0 +1,59 @@
+
+from secrets import randbits, randbelow
+
+
+# code initially used for parameter generation
+"""
+from sympy import isprime
+q = 0
+a = 0
+p = 4
+# generate p and choose an *especially secure* (or not at all) a value
+while not isprime(p):
+	q = randbits(2048)
+	while not isprime(q):
+		q = randbits(2048)
+	print(q)
+	p = 2 * 79 * q + 1
+	a = 3 * q
+
+g = 0
+# find a primitive root of p
+for i in range(2, p-1):
+	if pow(i, 2*q, p) != 1 and pow(i, 2*7, p) != 1 and pow(i, 7*q, p) != 1:
+		g = i
+		break
+
+ga = pow(g, a, p)
+"""
+
+p = 291364672960661360732390600179163652760495776567157403012191007271117867345852429694177354768594912356546060408688801581208771564079289691264090539415835339562007270071055799241101973109916402946427873861941259115350086423758128025604479256975813512214915212476655355145842445657234043877460533779149377518778673024962702920037559405809163682972223714546253005553818771896152325455387487821654597710967381940497325265358975740848907260779827547116945150368872272714940935459628719691323922491481357293326633172345686438383645472670406205248151279624293890792248591429143403599876506848606018745605244492571342225709147
+g = 2
+ga = 126471653193594503196317839397720756109354103444655552493815231218054633290830570569543806438134317014065068264818063743122187689609273544826564239222644926788620262089577749766832304162835603853307917657872522019672316602134045777714367257097200373221922212447230792164289177763021130837681200593039636579461760964485803840171261394703141332005036543660295999464519927734317685046724847789020959495436272478314658820318085199304361277652711258322558032701010409765336919339576513518634695438496718168790388718652093559283136731363294703693688223327128267135704439949128059416799299260927606164356607039849760090591119
+
+b = randbelow(p-1)
+
+gb = pow(g, b, p)
+
+gab = pow(ga, b, p)
+
+print("******************* Firework Control Console *********************\n")
+
+print("Note to employees: To prevent a repeat of our last yard party where ALL THE FIREWORKS WERE LAUNCHED IN BROAD DAYLIGHT, "
+	  "using the console now requires you to prove your identity with a Diffie Hellman private key. I'm told we're using an extra "
+	  "factor in p-1 and specifically choosing private keys for extra security. Whatever that means, Pops assures me he "
+	  "has no clue how anybody could accidently or intentionally mislaunch fireworks with this system in place.")
+
+print("\nWith a randomly chosen b value, g^b (mod p) = " + str(gb))
+
+print("\nTo remind you of the system parameters:")
+print("g = " + str(g))
+print("p = " + str(p))
+print("g^a (mod p) = " + str(ga), flush=True)
+
+response = int(input("\nPlease enter g^ab (mod p) to prove you know a:\n"))
+
+if response != gab:
+	print("Access denied.", flush=True)
+else:
+	print("magpie{l1tiN9_U9_7He_D4yL1T_5kY}", flush=True)

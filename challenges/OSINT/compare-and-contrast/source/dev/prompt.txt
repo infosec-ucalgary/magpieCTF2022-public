@@ -1,0 +1,97 @@
+final question brainstorm
+-------------------------
+> Only trust the initials of those away from Omni. They may be rotated by numbers
+  that are fortunate, but are not primes of the lunar algorithm.
+
+> Only trust the initials of those away from Omni top to bottom. They shift by
+  numbers with fortune, but not by those that are primes of the lunar algorithm.
+
+> Only trust the initials of workers away from Omni top to bottom. They shift by
+  numbers with fortune, but not by those that are primes of the lunar algorithm.
+
+> Only trust the combined initials of workers away from Omni top to bottom. They
+  shift by numbers with fortune, but not by those that are primes of the lunar
+  algorithm.
+
+> Only trust the combined initials of workers away from Omni top to bottom. They
+  shift by fortunate numbers, but not by those that are primes of the lunar algorithm.
+
+todo: 
+- split finding ciphertext and deciphering into two explicit steps
+- enter a new command `solve`
+  - prompt for ciphertext (confirm if the ciphertext is correct)
+  - iff the ciphertext is correct, prompt for final passphrase
+
+
+Mom & Pops DevTeam repository to link to: https://github.com/momnpopsdevteam/momnpops_website
+
+from names: lh gv iu dv jd kv qb rm qn ro uc rw
+from rotation: omniflagsstoleallcontrol
+plain text: omniflags stole all control
+
+
+info to leak
+------------
+ly@kali:personal $ ./a.out --ethernet 25150 35203
+socket created...
+proxy connected, rerouting traffic...
+made it 1
+key fetched...
+--- INTERCEPTION START ---
+ou surely understand your actions are not seen as favourable, correct?
+
+Sir we are terribly sorry but ther must be a different wayy to handle this
+We cannot accept to do what you ask, we've done some favours for you in the past but this is surely taking it too far.
+If the authorities find out about this, we would be absolutely done for.
+
+> We have means around the authorities and those services extend to your company as well.
+
+Even so  you surely think ruining the livelihood of others just to retrieve flags to sell is taking it a little far
+
+> Our agreement has already outlined your responsibilities. It is in your interest to follow them as discussed.
+> We do not wish to report your previous incidents with the authorities.
+
+Holdng onto flags you shouldn't have is one thingbut this is dealing with other prople's money!!
+
+> We understand your hesitance.
+> If flag storage is within your capabilities, then we have another for you to hold.
+> `magpie{|\/|ix1ng_|\|umb3r$_t0g3t43r}`
+> Failure to comply with this will lead to dire consequences, as you must understand.
+> We will contact you for a time to discuss this in-person. 
+
+CONNECTION CLOSED: [0.0.0.0]:73052 - Closed by client
+--- INTERCEPTION END ---
+process terminating...
+
+adding appropreate padding
+--------------------------
+ly@kali:personal $ ./exp.py --ethernet 25150 35203
+socket created...
+proxy connected, rerouting traffic...
+made it 1
+key fetched...
+--- INTERCEPTION START ---
+b'ou surely understand your actions are not seen as favourable, correct?\x00\x00'
+
+b'Sir we are terribly sorry but ther must be a different wayy to handle this\x00\x00\x00\x00\x00\x00'
+b"We cannot accept to do what you ask, we've done some favours for you in the past but this is surely taking it too far.\x00\x00"
+b'If the authorities find out about this, we would be absolutely done for.'
+
+> b'We have means around the authorities and those services extend to your company as well.\x00'
+
+b'Even so  you surely think ruining the livelihood of others just to retrieve flags to sell is taking it a little far\x00\x00\x00\x00\x00'
+
+> b'Our agreement has already outlined your responsibilities. It is in your interest to follow them as discussed.\x00\x00\x00'
+> b'We do not wish to report your previous incidents with the authorities.\x00\x00'
+
+b"Holdng onto flags you shouldn't have is one thingbut this is dealing with other prople's money!!"
+
+> b'We understand your hesitance.\x00\x00\x00'
+> b'If flag storage is within your capabilities, then we have another for you to hold.\x00\x00\x00\x00\x00\x00'
+> b'`magpie{|\\/|ix1ng_|\\|umb3r$_t0g3t43r}`\x00\x00'
+> b'Failure to comply with this will lead to dire consequences, as you must understand.\x00\x00\x00\x00\x00'
+> b'We will contact you for a time to discuss this in-person.\x00\x00\x00\x00\x00\x00\x00'
+
+CONNECTION CLOSED: [0.0.0.0]:73052 - Closed by client
+--- INTERCEPTION END ---
+process terminating...

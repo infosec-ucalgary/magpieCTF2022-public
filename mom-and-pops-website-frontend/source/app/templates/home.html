@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="home">
+
+    <h1 class="text-2xl">Welcome to Mom &amp; Pops Flag Shop</h1>
+    <div class="text-white/80 flexboxh text-xl">
+    <div class="text-white/80 flexboxv text-xl">
+    <img class="mx-auto" src="{{ url_for('static', filename='img/logo.png') }}">
+
+    <p>The one and <strong>ONLY</strong> stop for all your flag needs!</p>
+    <p>Learn more about our humble family-run company on the <a href="/about" class="text-teal-500">Our Story</a> page!</p>
+    <p>Check out the <a href="/products" class="text-teal-500">Products</a> page to view the flags for sale!</p>
+    <p>If you need to chat with us, you can call us up or email us with the info found on our <a href="/contact" class="text-teal-500">Contact</a> page!</p>
+    <p>To know what we need to know to help our customers get the flags they need, see our <a href="/privacy" class="text-teal-500">Privacy Policy</a>!</p>
+    <p>Finally, our simple little <a href="/terms" class="text-teal-500">Terms and Conditions</a> are available to see on our website just for you!</p>
+    </div>
+    <div class="text-white/80 flexboxv text-xl">
+    <img src="../static/img/FirstShop.jpg">
+    <p>Mom and Pops' first shop (circa 1945)</p>
+    </div>
+  </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="about w-full">
+    <h1 class="text-center" style="font-weight: bold;">Turn-Key Protocol</h1>
+    <p>In order to secure the First Flag ever produced by Mom and Pop, we have devised a method to 
+    store the flag in three vaults so that only by "turning" the key on all three vaults at the same
+    time can you get the flag.  To "turn the key" you need to execute the turn-key protocol (detailed
+    below).  The vaults encrypt the flag using AES and each vault will reply with 1/3 of the key
+    needed to decrypt the flag.</p>
+    <br>
+
+    <p>The vaults are located at:</p><br>
+    <div class="flex justify-center">
+        Vault 1: vault1.momandpopsflags.ca <br>
+        Vault 2: vault2.momandpopsflags.ca <br>
+        Vault 3: vault3.momandpopsflags.ca <br>
+    </div>
+    <br>
+    
+    <p>The vaults rotate the encryption every few seconds.
+    </p>
+    <br>
+    To turn the key on a vault you have to successfully execute the protocol set out below with a certain time frame:
+    </p>
+    <center><img style="background-color:transparent" src="../static/img/protocol.png" class="center" alt="turn key protocol"></center>
+    <div class="flex justify-center">
+            1. Client connects to the vault<br>
+            2. Vault replies: "oh hai!"<br>
+            3. Client sends: "INITIALIZE CONNECTION"<br>
+            4. Vault replies: "Connection successfully initialized.  Please reply with request..."<br>
+            5. Client replies: "SEND FLAG"<br>
+            6. Vault replies: "Flag requested.  Reply with challenge string &#60string&#62"<br>
+            7. Client replies: "&#60string&#62"<br>
+            8. Vault replies with encrypted flag data
+    </div>
+    <br>
+    <p>You will know that you executed the protocol successfully on all three vaults if the ciphertext and IV of all the messages are the same. Concatenate all partial keys together in the right order to form the full decryption key. Here is an example of the return message of a successful key turn on the first vault:<br>
+        <br>
+    <div class="flex justify-center">
+        Success! Your request took 322ms!<br>
+        The flag encryption rotates on all 3 vaults every 2400ms.<br><br>
+        AES-256 (CBC PKCS5)<br>
+        Partial key (1/3): 0x0B255E2D00AFF99C6B5E4<br>
+        IV: 0x9DBEBF97C56B789396457C122E929970<br>
+        Ciphertext: 0xEE0E88528EF1539C72A6820EC639F274<br>
+        <br>
+    </div>
+    <br>
+    If you are too slow to execute the protocol you will receive the following message:<br>
+    <br>
+    <div class="flex justify-center">
+    Sorry, too slow! Your request took 828ms! The protocol must be completed in under 360ms!<br>
+    The flag encryption rotates on all 3 vaults every 2400ms.<br>
+    </div>
+    <br>
+    </p>
+</div>
+
+
+
+{% endblock %}

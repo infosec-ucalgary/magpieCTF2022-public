@@ -1,0 +1,13 @@
+{
+  "name": "first_email_server",
+  "version": "1.0.0",
+  "description": "My first email server! Please improve security before deploying",
+  "main": "index.js",
+  "scripts": {
+    "start": "APP_ROOT=\"/var/www/html\" node ./index.js",
+    "test": "APP_ROOT=\"./public\" node ./index.js"
+  },
+  "author": "petiole",
+  "license": "ISC",
+  "dependencies": {}
+}

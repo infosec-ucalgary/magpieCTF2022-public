@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <script defer src="/js/register.js"></script>
+    <div id="main">
+      <h1>Register Your Email</h1>
+      <form id="register">
+        <label for="email">username</label>
+        <div class="input-field">
+          <input type="text" placeholder="your.name" id="email" required />
+          <p id="domain">@mompopsflags.com</p>
+        </div>
+        <label for="password">password</label>
+        <input type="password" placeholder="password" id="password" required />
+        <label for="confirm-password">confirm password</label>
+        <input type="password" placeholder="confirm password" id="confirm-password" required />
+        <button id="register-submit">register</button>
+      </form>
+      <p id="send-status"></p>
+      <a href="/">Already have an account?</a>
+    </main>
+  </body>
+</html>

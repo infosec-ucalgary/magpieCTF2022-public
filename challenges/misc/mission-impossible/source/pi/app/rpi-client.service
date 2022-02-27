@@ -1,0 +1,14 @@
+[Unit]
+Description=Raspberry Pi Client
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/dietpi/mission-impossible/run.sh
+Restart=always
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

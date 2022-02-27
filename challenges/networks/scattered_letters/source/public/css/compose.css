@@ -1,0 +1,20 @@
+#email-compose{
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+
+  min-height: 50vh;
+  height: 100%;
+  margin: 0 10vw;
+}
+
+#to-section, #subject-section{
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+#email-body{
+  resize: none;
+}

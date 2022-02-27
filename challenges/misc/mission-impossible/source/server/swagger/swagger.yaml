@@ -1,0 +1,92 @@
+swagger: "2.0"
+info:
+  description: "The following is API documentation for Mom and Pop's backend system-control management API. This quaint, old-fashioned, and extraordinarily cozy, management API is used to control all of Mom and Pop's backend data/security systems. This documentation includes all available endpoints as well as any required parameter/body values for each HTTP request type."
+  version: "1.0.0"
+  title: "Mom and Pop's Management API"
+tags:
+- name: "employees"
+  description: "Access employee information"
+- name: "security controls"
+  description: "Access to security controls"
+schemes:
+- "http"
+paths:
+  /api/v1/employees:
+    get:
+      tags:
+        - "employees"
+      summary: "Get information about a specific employee"
+      description: "Retrieves general information about a specific employee"
+      parameters:
+        - in: query
+          name: id
+          required: true
+          type: integer
+          description: "Id of employee"
+      responses:
+        "200":
+          description: "successful operation"
+  
+  /api/v1/employees/all:
+    get:
+      tags:
+        - "employees"
+      summary: "Get information about all employees"
+      description: "Retrieve general information about all employees"
+      responses:
+        "200":
+          description: "successful operation"
+          
+  /api/v1/employees/format:
+    get:
+      tags:
+        - "employees"
+      summary: "Get formatted employee information (EXPERIMENTAL)"
+      description: "Retrieve information about an employee in a specific format (EXPERIMENTAL)"
+      parameters:
+        - in: query
+          name: template
+          description: "Format string for response"
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "successful operation"
+          
+  /api/v1/security-controls/shutdown:
+    post:
+      tags:
+        - "security controls"
+      summary: "Shutdown security systems"
+      description: "Shutdown lasers in security system"
+      consumes:
+        - application/json
+      parameters:
+        - in: header
+          name: X-API-Key
+          type: string
+          description: "API key used for authorization"
+        - in: body
+          name: lasers
+          description: "The lasers to shut down"
+          schema:
+            $ref: '#/definitions/Shutdown'
+        
+      responses:
+        "200":
+          description: "successful operation"
+
+definitions:
+  Shutdown:
+    type: object
+    required:
+      - lasers
+    properties:
+      lasers:
+        type: array
+        items:
+          type: string
+        example:
+          - laser0
+          - laser2
+          

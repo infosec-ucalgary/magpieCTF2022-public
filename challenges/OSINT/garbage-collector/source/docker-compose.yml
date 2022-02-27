@@ -1,0 +1,14 @@
+version: '2'
+services:
+        web:
+                build: ./frontend/
+                volumes:
+                        - ./frontend:/app/
+                ports:
+                        - "8081:80"
+        api:
+                build: ./backend/
+                volumes:
+                        - ./backend:/api/
+                ports:
+                        - "3000:3000"
