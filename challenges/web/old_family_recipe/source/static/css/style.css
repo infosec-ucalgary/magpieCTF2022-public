@@ -1,0 +1,45 @@
+body {
+    --tw-bg-opacity: 1;
+    background-color: rgba(254, 243, 199, var(--tw-bg-opacity));
+}
+
+.container {
+    padding: 25px;
+    background-color: #8B4513;
+}
+
+button {   
+    background-color: black;   
+    width: 50%;  
+     color: white;   
+     padding: 15px;   
+     margin: 10px 0px;   
+     border: none;   
+     cursor: pointer;   
+      }   
+form {   
+     border: 3px solid #f1f1f1;
+     border-style: solid;
+     border-radius: 0.375rem;
+ }   
+input[type=text], input[type=password] {   
+     width: 100%;   
+     margin: 8px 0;  
+     padding: 12px 20px;   
+     display: inline-block;   
+     border: 2px solid black;
+     box-sizing: border-box;
+ }  
+button:hover {   
+     opacity: 0.7;   
+ }   
+
+ 
+h1, label, li, button, h2 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    padding: 3px;
+}
+ .center {
+    margin: auto;
+    width: 60%;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Garbage Collector</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 class="t-white t-center w-100 mx-auto">Garbage Collector</h1>
+        <canvas id="core" class="mx-auto" width="640" height="520" style="border: 1px solid #FFFFFF;"></canvas>
+        <div class="w-50 mx-auto">
+            <p class="t-white">You've had your eyes on Mom & Pop's Flag Shop for a long time now. You've been waiting for your chance to strike at them for the flags they stole from you.</p>
+            <br>
+            <h2 class="t-white">Your Objective: <b class="t-green">Find garbage around the area and see if you can figure out what happened to the flag that was rightfully yours.</b></h2>
+            <br>
+            <h2 class="t-white">Controls:</h2>
+            <ul class="t-green">
+                <li><b>W, A, S, D</b>: <em>Move your character Up, Left, Down, Right</em></li>
+                <li><b>E</b>: <em>Interact with something nearby</em></li>
+            </ul>
+            <h2 class="t-white">Inventory</h2>
+            <div id="imageDiv"><p class="t-white text-center" id="no-found">You haven't found anything yet...</p></div>
+        </div>
+        <script src="drag.js"></script>
+        <script src="script.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </body>
+</html>

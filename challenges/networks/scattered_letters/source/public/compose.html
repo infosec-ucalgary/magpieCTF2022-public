@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/compose.css" />
+  </head>
+  <body>
+    <script defer src="js/compose.js"></script>
+    <div id="main">
+      <form id="email-compose">
+        <div id="to-section">
+          <label for="email-to">Send To:</label>
+          <input required type="text" id="email-to" placeholder="Enter a recipient here..." />
+        </div>
+        <div id="subject-section">
+          <label for="email-subject">Subject:</label>
+          <input required type="text" id="email-subject" placeholder="Subject line..." />
+        </div>
+        <textarea id="email-body" placeholder="..."></textarea>
+        <input type="submit" value="send" />
+      </form>
+      <div id="send-status"></div>
+    </div>
+  </body>
+</html>

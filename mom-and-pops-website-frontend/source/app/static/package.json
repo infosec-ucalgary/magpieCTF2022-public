@@ -1,0 +1,22 @@
+{
+  "name": "mom-and-pop-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwind build -i src/style.css -o css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infosec-ucalgary/mom-and-pops-website-frontend.git"
+  },
+  "author": "Chris Schultze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/infosec-ucalgary/mom-and-pops-website-frontend/issues"
+  },
+  "homepage": "https://github.com/infosec-ucalgary/mom-and-pops-website-frontend#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}

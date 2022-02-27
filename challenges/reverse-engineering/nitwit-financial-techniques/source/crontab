@@ -1,0 +1,2 @@
+#run python script every minute
+* /5 * * * python /app/email-verify.py

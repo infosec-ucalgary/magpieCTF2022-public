@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="about w-full">
+    <h1 class="text-center" style="font-weight: bold;">Non-Fungible Tokens</h1>
+    <p>Flag technology has always beeen the cornerstone of any great civilization.  The Babylonians knew it,
+       the English knew it, and Mom & Pops knows it.  That's why we're taking flags into the 21st century with
+       our patented and trademarked NFT technology.  Using our patented trademarked secretive legitimate NFT 
+       technology, we are able to generate unique flags for purchase by our customers.  Each flag has a unique
+       signature known only to Mom & Pops so that immitations can be easily discovered and you can be sure that
+       your purchase remains the only genuine version in existence!
+    </p>
+    <br>
+
+    <p>Our patented trademarked secretive legitimate fun wholesome NFTs are only autioned off to a select group of
+       our most valued customers.  If you wish to join this select group, please increase your monthly purchases
+       to at least $500,000 and you too can join in on this exciting opportunity!  To give you an idea of what an
+       opportunity awaits, here is a testimonial from a recent auction winner who 100% does exist:  
+
+    </p><br>
+
+    <center><img src = "{{ image }}" alt="another piece of marketing genius!" id="NFT-image"/></center>
+    <div class="flex justify-center">
+        <p><b>Purchaser:</b> {{ buyer }}</p><br>
+    </div>
+    <div class="flex justify-center">
+        <p><b>Auction Price:</b> ${{ price }}</p>
+    </div>
+
+
+
+    <div class="flex items-center justify-center px-5 py-5" style="margin-top:60px">
+        <div class="w-full mx-auto max-w-xl rounded-lg bg-white dark:bg-gray-800 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
+            <div class="w-full pt-1 text-center pb-5 -mt-16 mx-auto">
+                <a href="#" class="block relative">
+                    <img alt="Actually a real person!" src="https://www.thispersondoesnotexist.com/image" class="mx-auto object-cover rounded-full h-20 w-20 "/>
+                </a>
+            </div>
+            <div class="w-full mb-10">
+                <div class="text-3xl text-indigo-500 text-left leading-tight h-3">
+                    “
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-100 text-center px-5">
+                    {{ testimonial }}
+                </p>
+                <div class="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">
+                    ”
+                </div>
+            </div>
+            <div class="w-full">
+                <p class="text-md text-indigo-500 font-bold text-center">
+                    {{ buyer }}
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-300 text-center">
+                    -Real Person
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+{% endblock %}

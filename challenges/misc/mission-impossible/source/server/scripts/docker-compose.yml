@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  mission-impossible:
+    image: mission-impossible
+    ports:
+      - "5000:80"

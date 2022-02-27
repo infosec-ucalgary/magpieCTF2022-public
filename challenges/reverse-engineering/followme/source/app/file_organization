@@ -1,0 +1,42 @@
+locked-secret:
+
+	main program that needs to be hex edited
+
+set-permissions:
+
+	program that sets permissions on the hex edited binary, locked-secret
+
+verify:
+
+	program that builds checksum to make sure the right program is given set uid
+	this function is used inside set-permissions and w-strace
+
+w-strace:
+
+	program wrapper that calls original strace. checks for SUID exploits
+
+followme:
+
+	program that makes setfattr syscall. provides a flag if the fork is traced
+
+other files needed:
+
+	- strace (at root)
+	- followme (at root)
+
+
+file organization:
+
+	/bin/strace (w-strace)
+
+	/root/strace (original)
+	/root/followme
+	
+	/home/user/set-permissions
+	/home/user/locked-secret
+
+
+manual permissions:
+
+	/bin/strace (w-strace) needs no password sudo permissions.
+	pygmy ALL=(ALL) NOPASSWD:  /home/pygmy/ucsec/ctf-2022/followme/w-strace -f ./*

@@ -1,0 +1,12 @@
+{
+  "name": "compare-and-contrast",
+  "version": "1.0.0",
+  "description": "The Compare and Contrast magpieCTF2022 challenge npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_APP_ROOT='./public' node index.js",
+    "start": "NODE_APP_ROOT='/var/www/html' node index.js"
+  },
+  "author": "petiole",
+  "license": "ISC"
+}

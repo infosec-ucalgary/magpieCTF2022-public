@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$color-1: #080e0e;
+$color-2: #FFD700;
+
+html, body {
+    background-color: $color-1;
+    height: 100%;
+}
+
+#splash-background {
+    background-color: $color-1;
+}
+
+.pane {
+    background-color: $color-1;
+    border-color: $color-2;
+}
+
+.about-pane {
+    background-color: rgba($color: $color-1, $alpha: 0.9);
+    border-color: $color-2;
+}
+
+.about-pane Link {
+    background-color: $color-1;
+    border-color: $color-2;
+}
+
+.about-pane hr {
+    border-color: $color-2;
+    background-color: $color-2;
+}
+
+.pane Link {
+    background-color: $color-1;
+    border-color: $color-2;
+}
+
+.pane hr {
+    border-color: $color-2;
+    background-color: $color-2;
+}
+
+.map-pane {
+    background-color: rgba($color: $color-1, $alpha: 0.9);
+    border-color: $color-2;
+}

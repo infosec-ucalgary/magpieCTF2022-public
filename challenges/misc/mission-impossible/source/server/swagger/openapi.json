@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Swagger Petstore",
+    "description": "Test description",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "employees",
+      "description": "Access employee information"
+    },
+    {
+      "name": "security controls",
+      "description": "Access to security controls"
+    }
+  ],
+  "paths": {
+    "/api/v1/employees": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Get information about a specific employee",
+        "description": "Retrieves general information about a specific employee",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id of employee",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/api/v1/employees/all": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Get information about all employees",
+        "description": "Retrieve general information about all employees",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/api/v1/employees/format": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Get formatted employee information",
+        "description": "Retrieve information about an employee in a specific format (EXPERIMENTAL)",
+        "parameters": [
+          {
+            "name": "template",
+            "in": "query",
+            "description": "Format string for response",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/api/v1/security-controls/shutdown": {
+      "post": {
+        "tags": [
+          "security controls"
+        ],
+        "summary": "Shutdown security system",
+        "description": "Shutdown lasers in security system",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The lasers to shut down",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Lasers"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "lasers"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Lasers": {
+        "type": "array",
+        "example": [
+          "laser0",
+          "laser2"
+        ],
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

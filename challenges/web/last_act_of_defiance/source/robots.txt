@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+# This is a good place to look but it isn't here!! This was too obvious, so I hid it in a different directory. Keep looking!

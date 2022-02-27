@@ -1,0 +1,192 @@
+:root{
+  font-family: 'Spline Sans', sans-serif;
+
+  font-size: 16px;
+
+  --safe-door: #404040;
+  --safe-door-back: #3a3a3a;
+  --safe-box: #333333;
+  --safe-inner: #111111;
+
+  --safe-button: #a2a2a2;
+
+  --dial-outer: grey;
+  --dial-middle: lightgrey;
+  --dial-inner: darkgrey;
+}
+
+body *{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+
+  background: url(https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=background-board-carpentry-326333.jpg&fm=jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  overflow: hidden;
+}
+
+#main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 1rem;
+  perspective: 2000px;
+}
+
+#safe{
+  background-color: var(--safe-box);
+  padding: 1rem;
+  transform-style: preserve-3d;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+#safe-inner{
+  position: fixed;
+
+  height: calc(100% - 2rem);
+  width: calc(100% - 2rem);
+
+  background-color: var(--safe-inner);
+  border-radius: 2rem;
+
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
+#safe-door{
+  transform-origin: right;
+  transform-style: preserve-3d;
+  transition: transform ease-in-out 3s;
+  display: flex;
+  height: initial;
+  width: initial;
+  position: relative;
+}
+
+#safe-door *{
+  transform-style: preserve-3d;
+}
+
+#safe-door-front{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+
+  background-color: var(--safe-door);
+  padding: 3rem;
+  border-radius: 2rem;
+
+  place-items: center;
+  gap: 2rem;
+  transform: translateZ(1.5rem);
+}
+
+#safe-door-back{
+  background-color: var(--safe-door-back);
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+#safe-door.open{
+  transform: rotateY(100deg);
+}
+
+#safe-dial{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-row: 1/-1;
+
+  height: 20rem;
+  width: 20rem;
+}
+
+.dial-part{
+  position: absolute;
+  border-radius: 50%;
+}
+
+.dial-part.outer{
+  background-color: var(--dial-outer);
+  height: 100%;
+  width: 100%;
+  transform: translateZ(0.5rem);
+}
+
+.dial-part.middle{
+  background-color: var(--dial-middle);
+  height: 60%;
+  width: 60%;
+  transform: translateZ(1rem);
+}
+
+.dial-part.inner{
+  background-color: var(--dial-inner);
+  height: 50%;
+  width: 50%;
+  transform: translateZ(2rem);
+}
+
+#pass-input{
+  display: flex;
+}
+
+#pass-val{
+  font-family: "Segment7Standard";
+  padding: 0.5rem;
+  font-size: 2rem;
+  background-color: black;
+  color: green;
+  width: 12rem;
+}
+
+#pass-submit{
+  margin: auto;
+  height: 2rem;
+  width: 2rem;
+}
+
+.numpad{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--safe-door-back);
+}
+
+.numkey{
+  height: 3rem;
+  width: 3rem;
+
+  border-radius: 0.5rem;
+
+  display: grid;
+  place-items: center;
+
+  background-color: var(--safe-button);
+  transform: translateZ(0.5rem);
+}

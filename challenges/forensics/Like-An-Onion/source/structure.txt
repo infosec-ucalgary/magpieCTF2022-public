@@ -1,0 +1,32 @@
+Structure of the challenge from flag --> final layer
+
+At each layer, the variables in the previous
+layer will be renamed to random characters to make
+them harder to read. The previous layer will also be
+obfuscated.
+
+Flag:
+    - magpie{unR4VeLl3D_7h3_c0Re!_4h123vad3fbs}
+
+Layer 1 - Visual Basic Script:
+    - Is a .vbs file that Base64 decodes the flag (absolutely 0 clue if it actually works,
+      but the flag is in the file encoded, so they can decode it manually anyways).
+    - This is the inner-most layer.
+
+Layer 2 - Python:
+    - Is a .py file that builds vbscript code, creates a .vbs file, runs it, and deletes it.
+        - The vbs code is slowly constructed via multiple concatenations.
+    - There is a lot of obfuscation to confuse the users.
+
+Layer 3 - Javascript:
+    - Is a javascript file that builds the .py file, runs it, and deletes it.
+        - Will use an algorithm to decode a string encrypted in unicode (which
+          will be the python source code), run it as a python file, and delete it.
+
+Layer 4 - jpg image file
+    - The obfuscated javascript will be hidden on the end of a jpg.
+
+Final Layer - Memory Dump:
+    - The user will be given access to a memory dump that includes the jpeg file. They
+      need to inspect the memory dump and extract the file.
+    - This memory dump will be provided for the challenge.

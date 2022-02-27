@@ -1,0 +1,66 @@
+body {
+    background-color: #101010;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol,
+div,
+span {
+    font-family: monospace;
+}
+
+p, ul {
+    font-size: 18px;
+}
+
+canvas {
+    padding: 0;
+    display: block;
+}
+
+img {
+    display: block;
+}
+
+.t-white {
+    color: white;
+}
+
+.t-black {
+    color: black;
+}
+
+.t-green {
+    color: #00FF00;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#drag-img {
+    position: absolute;
+    z-index: 9;
+    cursor: move;
+}

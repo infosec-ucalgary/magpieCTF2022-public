@@ -1,0 +1,6 @@
+# Avoid copying Docker-related files into the server
+Dockerfile
+.dockerignore
+
+# ignore data/dump.json file that may have testing values
+js/app_raw.js

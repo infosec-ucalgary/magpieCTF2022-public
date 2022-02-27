@@ -1,0 +1,12 @@
+{
+  "name": "revenge-js",
+  "version": "1.0.0",
+  "description": "A simple vault-like webserver",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_APP_ROOT='.' node index.js",
+    "start": "NODE_APP_ROOT='/var/www/html' node index.js"
+  },
+  "author": "petiole",
+  "license": "ISC"
+}
