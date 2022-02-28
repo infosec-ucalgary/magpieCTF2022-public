@@ -13,27 +13,27 @@ This will be a bare-bones guide on how to run one of our docker challenges local
 1. Install docker on your computer.
     * If you're running Windows, I recommend looking into installing Docker using WSL2.
 2. Clone this repo to your local machine.
-3. Change your directory to the source/ folder for the challenge you want to run in a terminal.
-4. Run docker build -t <tag> .
-    * <tag> is a name of your choice (for example, foobar).
-5. To start the docker container, run docker run -p <external port>:<internal port> <tag>.
-    * <external port> is the external port you will bind to a port on your computer. It can be almost anything.
-    * <internal port> is the internal port that will be mapped inside the container.
+3. Change your directory to the `source/` folder for the challenge you want to run in a terminal.
+4. Run `docker build -t <tag> .`
+    * `<tag>` is a name of your choice (for example, foobar).
+5. To start the docker container, run `docker run -p <external port>:<internal port> <tag>`.
+    * `<external port>` is the external port you will bind to a port on your computer. It can be almost anything.
+    * `<internal port>` is the internal port that will be mapped inside the container.
         * The internal port(s) differs for each challenge. See Internal Ports below.
-    * <tag> is the same tag that you used to build the challenge before.
-    * You can use the -p flag multiple times to forward multiple ports to the container.
+    * `<tag>` is the same tag that you used to build the challenge before.
+    * You can use the `-p` flag multiple times to forward multiple ports to the container.
     
 For example, to start Last Act of Defiance:
 
-1. git clone git@github.com:infosec-ucalgary/magpieCTF-2022.git
-2. cd magpieCTF-2021/challenges/web/last_act_of_defiance/source
-3. docker build -t defiance .
-4. docker run -p 80:80 defiance
+1. `git clone git@github.com:infosec-ucalgary/magpieCTF-2022-public.git`
+2. `cd magpieCTF-2022-public/challenges/web/last_act_of_defiance/source`
+3. `docker build -t defiance .`
+4. `docker run -p 80:80 defiance`
 5. Go to http://localhost in a web browser to connect!
     
-Note: All dynamic challenges in the binary exploitation category need to be run with the --privileged flag.
+Note: All dynamic challenges in the binary exploitation category need to be run with the `--privileged` flag.
    
-    docker run --privileged -p 31337:31337 foobar
+    `docker run --privileged -p 31337:31337 foobar`
     
 ### Internal Ports
 1. Scattered Letters
